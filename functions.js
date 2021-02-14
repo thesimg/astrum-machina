@@ -1,6 +1,10 @@
+function shade() {
+    return 150 + rand(105);
+}
+
 function rand(max) {
     return round(random() * max);
-}
+} 
 
 function hexagon(posX, posY, radius, rot) {
     push();
@@ -81,8 +85,4 @@ function pointOnCircle(posX, posY, radius, angle) {
     const x = posX + radius * cos(angle)
     const y = posY + radius * sin(angle)
     return createVector(x, y)
-}
-
-function shade() {
-    return 150 + rand(105);
 }

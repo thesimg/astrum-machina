@@ -14,6 +14,39 @@ function draw() {
   noLoop();
 }
 
+const elements = {
+  lines: {
+    max: 2,
+    min: 0,
+    weight: 20,
+    stroke: 1+rand(5),
+  },
+  circles: {
+    max: 3,
+    min: 0,
+    weight: 20,
+    fillWeight: 20,
+    stroke: 1+rand(5),
+  },
+  pentagons: {
+    max: 3,
+    min: 0,
+    weight: 20,
+    stroke: 1+rand(5),
+  },
+  hexagons: {
+    max: 3,
+    min: 0,
+    weight: 20,
+    stroke: 1+rand(5),
+    
+  },
+  outline: {
+    weight: 60,
+    shape: rand(2),
+  }
+}
+
 function star() {
   const shape = rand(0);
   const weight = 1+rand(5);
