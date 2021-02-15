@@ -4,11 +4,107 @@ function shade() {
 
 function rand(max) {
     return round(random() * max);
-} 
+}
 
-function hexagon(posX, posY, radius, rot) {
+function pointOnCircle(x, y, radius, angle) {
+    const posX = x + radius * cos(angle)
+    const posY = y + radius * sin(angle)
+    return createVector(posX, posY)
+}
+
+
+const elements = {
+    lines: {
+        max: 2,
+        weight: 90,
+        draw() {
+            if (rand(100) < elements.lines.weight) {
+                for (var i = 0; i < rand(elements.lines.max); i++) {
+                    stroke(shade());
+                    strokeWeight(0.5 + random(1));
+                    lines(200, 200, rand(6) * 2, 0, rand(1) + 0.5);
+                }
+            }
+        }
+    },
+    circles: {
+        max: 1,
+        weight: 80,
+        fillWeight: 20,
+        draw() {
+            if (rand(100) < elements.circles.weight) {
+                for (var i = 0; i < rand(elements.circles.max); i++) {
+                    if (rand(100) < elements.circles.fillWeight) {
+                        fill(shade());
+                        noStroke();
+                    } else {
+                        stroke(shade());
+                        strokeWeight(0.5 + random(1))
+                        noFill();
+                    }
+                    circles(200, 200, 4 + rand(4) * 2, 0);
+                }
+            }
+        }
+    },
+    hexagons: {
+        max: 1,
+        weight: 70,
+        draw() {
+            if (rand(100) < elements.hexagons.weight) {
+                if (rand(100) < elements.circles.fillWeight) {
+                    fill(shade());
+                    noStroke();
+                } else {
+                    stroke(shade());
+                    strokeWeight(0.5 + random(1))
+                    noFill();
+                }
+                for (var i = 0; i < rand(elements.hexagons.max); i++) {
+                    hexagons(200, 200, rand(6) * 2, 0);
+                }
+            }
+        }
+    },
+    outline: {
+        weight: 100,
+        shape: 1,
+        fillWeight: 20,
+        width: 140,
+        draw() {
+            if (rand(100) < elements.outline.weight) {
+                if (rand(100) < elements.outline.fillWeight) {
+                    fill(shade());
+                } else {
+                    noFill();
+                    stroke(shade());
+                    strokeWeight(rand(1) + 0.5);
+                }
+                let randWidth = 50 + rand(elements.outline.width);
+                switch (rand(elements.outline.shape)) {
+                    case 0:
+                        ellipse(200, 200, randWidth*2, randWidth*2);
+                        break;
+                    case 1:
+                        hexagon(200, 200, randWidth, 60);
+                        break;
+                }
+            }
+        }
+    },
+    generate: {
+        gen() {
+            elements.outline.draw();
+            elements.lines.draw();
+            elements.circles.draw();
+            elements.hexagons.draw();
+        },
+    }
+}
+
+function hexagon(x, y, radius, rot) {
     push();
-    translate(posX, posY);
+    translate(x, y);
     rotate(rot);
     const rotAngle = 360 / 6;
     beginShape()
@@ -20,35 +116,27 @@ function hexagon(posX, posY, radius, rot) {
     pop();
 }
 
-function pentagon(posX, posY, radius, rot) {
-    push();
-    translate(posX, posY);
-    rotate(rot);
-    const rotAngle = 360 / 5;
-    beginShape()
-    for (let i = 0; i < 5; i++) {
-        const thisVertex = pointOnCircle(0, 0, radius, i * rotAngle)
-        vertex(thisVertex.x, thisVertex.y)
-    }
-    endShape(CLOSE)
-    pop();
+function circagon(x, y, radius) {
+    ellipse(x, y, radius * 2, radius * 2);
 }
 
-function lines(posX, posY, amount, rot) {
-    const lineWeight = 1 + rand(1);
-    strokeWeight(lineWeight);
-    push();
-    translate(posX, posY);
+
+function lines(x, y, amount, rot, weight) {
     const rotAngle = 360 / amount;
     const radCap = rand(100);
     const radius = 15 + rand(75);
     let radRand;
 
-    stroke(shade());
+    push();
+    translate(x, y);
     rotate(rot);
+
+    strokeWeight(weight);
+    stroke(shade());
     strokeCap(SQUARE);
+
     if (rand(1) === 0) {
-        radRand = rand(10);
+        radRand = rand(40);
     } else {
         radRand = -20;
     }
@@ -59,11 +147,11 @@ function lines(posX, posY, amount, rot) {
     pop();
 }
 
-function circles(posX, posY, amount, rot) {
+function circles(x, y, amount, rot) {
     const lineWeight = 1 + rand(1);
     strokeWeight(lineWeight);
     push();
-    translate(posX, posY);
+    translate(x, y);
     const rotAngle = 360 / amount;
     const radCap = rand(100);
     const radius = 15 + rand(75);
@@ -77,12 +165,24 @@ function circles(posX, posY, amount, rot) {
     pop();
 }
 
-function circagon(posX, posY, radius) {
-    ellipse(posX, posY, radius * 2, radius * 2);
-}
+function hexagons(x, y, amount, rot) {
+    const lineWeight = 1 + rand(1);
+    strokeWeight(lineWeight);
+    push();
+    translate(x, y);
+    const rotAngle = 360 / amount;
+    const radCap = rand(100);
+    const radius = 15 + rand(75);
 
-function pointOnCircle(posX, posY, radius, angle) {
-    const x = posX + radius * cos(angle)
-    const y = posY + radius * sin(angle)
-    return createVector(x, y)
+    stroke(shade());
+    rotate(rot);
+    for (let i = 0; i < amount; i++) {
+        rotate(rotAngle);
+        if (rand(1) === 0) {
+            hexagon(radius + radCap, 0, 20, 0);
+        } else {
+            hexagon(radius + radCap, 0, 20, 30);
+        }
+    }
+    pop();
 }
