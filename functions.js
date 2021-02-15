@@ -22,7 +22,7 @@ const elements = {
                 for (var i = 0; i < rand(elements.lines.max); i++) {
                     stroke(shade());
                     strokeWeight(0.5 + random(1));
-                    lines(200, 200, rand(6) * 2, 0, rand(1) + 0.5);
+                    lines(200, 200, 4 + rand(6) * 2, 0, rand(1) + 0.5);
                 }
             }
         }
@@ -35,14 +35,14 @@ const elements = {
             if (rand(100) < elements.circles.weight) {
                 for (var i = 0; i < rand(elements.circles.max); i++) {
                     if (rand(100) < elements.circles.fillWeight) {
-                        fill(shade());
+                        fill(shade(), 25+rand(100));
                         noStroke();
                     } else {
                         stroke(shade());
                         strokeWeight(0.5 + random(1))
                         noFill();
                     }
-                    circles(200, 200, 4 + rand(4) * 2, 0);
+                    circles(200, 200, 4 + rand(6) * 2, 0);
                 }
             }
         }
@@ -53,7 +53,7 @@ const elements = {
         draw() {
             if (rand(100) < elements.hexagons.weight) {
                 if (rand(100) < elements.circles.fillWeight) {
-                    fill(shade());
+                    fill(shade(), 25+rand(100));
                     noStroke();
                 } else {
                     stroke(shade());
@@ -61,7 +61,7 @@ const elements = {
                     noFill();
                 }
                 for (var i = 0; i < rand(elements.hexagons.max); i++) {
-                    hexagons(200, 200, rand(6) * 2, 0);
+                    hexagons(200, 200, 4 + rand(6) * 2, 0);
                 }
             }
         }
@@ -74,7 +74,7 @@ const elements = {
         draw() {
             if (rand(100) < elements.outline.weight) {
                 if (rand(100) < elements.outline.fillWeight) {
-                    fill(shade());
+                    fill(shade(), 25+rand(100));
                 } else {
                     noFill();
                     stroke(shade());
