@@ -12,7 +12,8 @@ function draw() {
   elements.generate.gen();
 
   noLoop();
-} 
+}
+
 
 /*
 function star() {

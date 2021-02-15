@@ -83,7 +83,7 @@ const elements = {
                 let randWidth = 50 + rand(elements.outline.width);
                 switch (rand(elements.outline.shape)) {
                     case 0:
-                        ellipse(200, 200, randWidth*2, randWidth*2);
+                        ellipse(200, 200, randWidth * 2, randWidth * 2);
                         break;
                     case 1:
                         hexagon(200, 200, randWidth, 60);
