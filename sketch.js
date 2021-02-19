@@ -9,7 +9,7 @@ function setup() {
 function draw() {
   background(40);
 
-  elements.generate.gen();
+  genArt();
 
   noLoop();
 }
