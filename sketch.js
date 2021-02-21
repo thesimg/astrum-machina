@@ -9,9 +9,9 @@ function setup() {
 function draw() {
   background(40);
 
-  genArt();
+  star();
 
-  noLoop();
+  
 }
 
 

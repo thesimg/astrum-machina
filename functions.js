@@ -15,17 +15,23 @@ function pointOnCircle(x, y, radius, angle) {
 
 const elements = {
     lines: {
+        id: "lines",
+        max: 2,
         draw() {
             lines(200, 200, 4 + rand(6) * 2, 0, rand(1) + 0.5);
 
         }
     },
     dots: {
+        id: "dots",
+        max: 2,
         draw() {
-            dots(200, 200, 6 + rand(10) * 2, 3 + rand(5), 0, rand(3) + 2);
+            dots(200, 200, 6 + rand(10) * 2, 3 + rand(5), 0, rand(3) + 2, random(0.5));
         }
     },
     circles: {
+        id: "circles",
+        max: 2,
         fillWeight: 20,
         draw() {
             if (rand(100) < elements.circles.fillWeight) {
@@ -41,6 +47,8 @@ const elements = {
         }
     },
     hexagons: {
+        id: "hexagons",
+        max: 2,
         fillWeight: 20,
         draw() {
             if (rand(100) < elements.hexagons.fillWeight) {
@@ -55,6 +63,8 @@ const elements = {
         }
     },
     outline: {
+        id: "outline",
+        max: 2,
         shape: 1,
         fillWeight: 20,
         width: 140,
@@ -81,24 +91,37 @@ const elements = {
 }
 
 const genOptions = [
-    elements.outline.draw,
-    elements.lines.draw,
-    elements.circles.draw,
-    elements.hexagons.draw,
-    elements.dots.draw,
+    elements.outline,
+    elements.lines,
+    elements.circles,
+    elements.hexagons,
+    elements.dots,
 ];
+const genIndex = [
+    0, 
+    0, 
+    0, 
+    0, 
+    0, 
+];
+const numGenned = 0;
+const toGen = [];
 
-function genArt() {
-    for (var i = 0; i < 5 + rand(5); i++) {
-        var genned = rand(genOptions.length - 1);
-        genOptions[genned]();
-        //print(genned)
+function star() {
+    if(toGen.length < 4+rand(4)){
+        var genRand = rand(genOptions.length - 1);
+        genIndex[genRand]++;
+        if(genIndex[genRand] <= genOptions[genRand].max){
+            print(genOptions[genRand].id);
+            toGen.push(genOptions[genRand]);
+        }
+    }else{
+        for(var i = 0; i < toGen.length; i++){
+            toGen[i].draw();
+        }
+        print("done");
+        noLoop();
     }
-    //genOptions[rand(genOptions.length-1)]();
-    /*elements.outline.draw();
-    elements.lines.draw();
-    elements.circles.draw();
-    elements.hexagons.draw();*/
 };
 
 function hexagon(x, y, radius, rot) {
@@ -122,7 +145,7 @@ function circagon(x, y, radius) {
 
 function lines(x, y, amount, rot, weight) {
     const rotAngle = 360 / amount;
-    const radCap = rand(100);
+    const radCap = (100);
     const radius = 15 + rand(75);
     let radRand;
 
@@ -134,35 +157,40 @@ function lines(x, y, amount, rot, weight) {
     stroke(shade());
     strokeCap(SQUARE);
 
-    if (rand(1) === 0) {
-        radRand = rand(100);
-    } else {
-        radRand = -20;
-    }
     for (let i = 0; i < amount; i++) {
         rotate(rotAngle);
-        line(radius, 0, radius + radCap + radRand, 0);
+        line(radius, 0, radius + radCap, 0);
     }
     pop();
 }
 
-function dots(x, y, amount, amount2, rot, weight) {
+function dots(x, y, amount, amount2, rot, weight, decay) {
     const rotAngle = 360 / amount;
     const radSpace = 5 + rand(25);
     const radius = 15 + rand(75);
-    let radRand;
+    const decayRand = rand(2);
 
     push();
     translate(x, y);
     rotate(rot);
 
-    strokeWeight(weight);
     stroke(shade());
 
-    print("point");
     for (let i = 0; i < amount; i++) {
         rotate(rotAngle);
         for (let j = 0; j < amount2; j++) {
+            switch(decayRand){
+                case 0:
+                    strokeWeight(weight);
+                break;
+                case 1:
+                strokeWeight(weight/4 + (decay*j));
+                break;
+                case 2:
+                    strokeWeight(weight - (decay*j));
+                break;
+            }
+            
             point(radius + (j * radSpace), 0);
         }
     }
