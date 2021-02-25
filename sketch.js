@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(1000, 1000);
   background(40);
   angleMode(DEGREES);
   rectMode(CENTER);
@@ -8,70 +8,10 @@ function setup() {
 
 function draw() {
   background(40);
-
-  star();
+  back(1);
+  fill(0, 230);
+  rect(width/2, height/2, width+20, height+20)
+  star(rand(1000), rand(1000), random(0.5, 2), rand(360));
 
   
 }
-
-
-/*
-function star() {
-  const shape = rand(1);
-  const weight = 1+rand(5);
-  let repeat;
-  let repeat2;
-  let gen = rand(2);
-
-  noFill();
-  strokeWeight(weight);
-  stroke(shade());
-
-  switch (shape) {
-    case 0:
-      repeat = (1+rand(5))*2;
-      repeat2 = (1+rand(5))*2;
-
-      switch(gen){
-        case 0:
-          circagon(200, 200, 100);
-          lines(200, 200, repeat);
-          circles(200, 200, repeat);
-        break;
-        case 1:
-          circagon(200, 200, 100);
-          lines(200, 200, repeat);
-          circles(200, 200, repeat2);
-        break;
-        case 2:
-          circagon(200, 200, 100);
-          lines(200, 200, repeat2);
-          circles(200, 200, repeat);
-        break;
-      }
-
-      break;
-    case 1:
-      repeat = (1+rand(1))*6;
-      repeat2 = (1+rand(1))*6;
-
-      switch(gen){
-        case 0:
-          hexagon(200, 200, 100, 60);
-          lines(200, 200, repeat);
-          circles(200, 200, repeat);
-        break;
-        case 1:
-          hexagon(200, 200, 100, 60);
-          lines(200, 200, repeat);
-          circles(200, 200, repeat2);
-        break;
-        case 2:
-          hexagon(200, 200, 100, 60);
-          lines(200, 200, repeat2);
-          circles(200, 200, repeat);
-        break;
-      }
-      break;
-  }
-}*/

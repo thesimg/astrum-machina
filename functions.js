@@ -12,13 +12,176 @@ function pointOnCircle(x, y, radius, angle) {
     return createVector(posX, posY)
 }
 
+function back(type) {
+
+    switch (type) {
+        case 0:
+            switch (rand(3)) {
+                case 0:
+                    push();
+                    translate(random(10), random(10));
+                    for (var i = 0; i < 52; i++) {
+                        for (var j = 0; j < 50; j++) {
+                            fill(200);
+                            rect(i * 20, j * 20, random(20), 10);
+                        }
+                    }
+                    pop();
+                    break;
+                case 1:
+                    push();
+                    translate(random(10), random(10));
+                    for (var i = 0; i < 52; i++) {
+                        for (var j = 0; j < 50; j++) {
+                            fill(200);
+                            rect(i * 20, j * 20, 10, random(20));
+                        }
+                    }
+                    pop();
+                    break;
+                case 2:
+                    push();
+                    translate(random(10), random(10));
+                    for (var i = 0; i < 52; i++) {
+                        for (var j = 0; j < 50; j++) {
+                            fill(200);
+                            rect(random(10) + i * 20, random(10) + j * 20, random(20), 10);
+                        }
+                    }
+                    pop();
+                    break;
+                case 3:
+                    push();
+                    translate(random(10), random(10));
+                    for (var i = 0; i < 52; i++) {
+                        for (var j = 0; j < 50; j++) {
+                            fill(200);
+                            rect(random(10) + i * 20, random(10) + j * 20, 10, random(20));
+                        }
+                    }
+                    pop();
+                    break;
+                    break;
+            }
+            break;
+        case 1:
+            switch (9) {
+                case 0:
+                    for (var x = 0; x < width; x += 10) {
+                        for (var y = 0; y < height; y += 10) {
+                            var c = 255 * noise(0.01 * x, 0.01 * y);
+                            fill(c, 100 + random(155));
+                            rect(x, y, 10, 10);
+
+                        }
+                    }
+                    break;
+                case 1:
+                    for (var x = 0; x < width; x += 20) {
+                        for (var y = 0; y < height; y += 20) {
+                            var c = 255 * noise(0.01 * x, 0.01 * y);
+                            fill(c, 100 + random(155));
+                            rect(x, y, 10, 10);
+
+                        }
+                    }
+                    break;
+                case 2:
+                    for (var x = 0; x < width; x += 20) {
+                        for (var y = 0; y < height; y += 20) {
+                            var c = 255 * noise(0.01 * x, 0.01 * y);
+                            fill(c, 100 + random(155));
+                            ellipse(x, y, 20, 20);
+
+                        }
+                    }
+                    break;
+                case 3:
+                    for (var x = 0; x < width; x += 20) {
+                        for (var y = 0; y < height; y += 20) {
+                            var c = 255 * noise(0.01 * x, 0.01 * y);
+                            fill(c, 100 + random(155));
+                            ellipse(x + random(10), y + random(10), 20, 20);
+
+                        }
+                    }
+                    break;
+                case 4:
+                    for (var x = 0; x < width; x += 10) {
+                        for (var y = 0; y < height; y += 10) {
+                            var c = 255 * noise(0.01 * x, 0.01 * y);
+                            fill(c, 100 + random(155));
+                            ellipse(x, y, random(10), random(10));
+
+                        }
+                    }
+                    break;
+                case 5:
+                    for (var x = 0; x < width; x += 10) {
+                        for (var y = 0; y < height; y += 10) {
+                            var c = 255 * noise(0.01 * x, 0.01 * y);
+                            fill(c, 100 + random(155));
+                            rect(x, y, random(10), random(10));
+
+                        }
+                    }
+                    break;
+                case 6:
+                    for (var x = 0; x < width; x += 20) {
+                        for (var y = 0; y < height; y += 20) {
+                            var c = 255 * noise(0.01 * x, 0.01 * y);
+                            fill(c, 100 + random(155));
+                            ellipse(x, y, random(20), random(20));
+
+                        }
+                    }
+                    break;
+                case 7:
+                    for (var x = 0; x < width; x += 20) {
+                        for (var y = 0; y < height; y += 20) {
+                            var c = 255 * noise(0.01 * x, 0.01 * y);
+                            fill(c, 100 + random(155));
+                            rect(x, y, random(20), random(20));
+
+                        }
+                    }
+                    break;
+                case 8:
+                    for (var x = 0; x < width; x += 20) {
+                        for (var y = 0; y < height; y += 20) {
+                            var c = 255 * noise(0.01 * x, 0.01 * y);
+                            fill(c, 100 + random(155));
+                            ellipse(x + random(10), y + random(10), random(20), random(20));
+
+                        }
+                    }
+                    break;
+                case 9:
+                    for (var x = 0; x < width; x += 20) {
+                        for (var y = 0; y < height; y += 20) {
+                            var c = 255 * noise(0.01 * x, 0.01 * y);
+                            fill(c, 100 + random(155));
+                            rect(x + random(10), y + random(10), random(20), random(20));
+
+                        }
+                    }
+                    break;
+            }
+            break;
+
+    }
+}
+
+
+
+
 
 const elements = {
     lines: {
         id: "lines",
         max: 2,
         draw() {
-            lines(200, 200, 4 + rand(6) * 2, 0, rand(1) + 0.5);
+            lines(0, 0, 4 + rand(6) * 2, 0, rand(1) + 0.5);
 
         }
     },
@@ -26,7 +189,7 @@ const elements = {
         id: "dots",
         max: 2,
         draw() {
-            dots(200, 200, 6 + rand(10) * 2, 3 + rand(5), 0, rand(3) + 2, random(0.5));
+            dots(0, 0, 6 + rand(10) * 2, 3 + rand(5), 0, rand(3) + 2, random(0.5));
         }
     },
     circles: {
@@ -42,7 +205,7 @@ const elements = {
                 strokeWeight(0.5 + random(1));
                 noFill();
             }
-            circles(200, 200, 4 + rand(6) * 2, 0);
+            circles(0, 0, 4 + rand(6) * 2, 0);
 
         }
     },
@@ -59,7 +222,7 @@ const elements = {
                 strokeWeight(0.5 + random(1));
                 noFill();
             }
-            hexagons(200, 200, 4 + rand(6) * 2, 0);
+            hexagons(0, 0, 4 + rand(6) * 2, 0);
         }
     },
     outline: {
@@ -79,10 +242,10 @@ const elements = {
             let randWidth = 50 + rand(elements.outline.width);
             switch (rand(elements.outline.shape)) {
                 case 0:
-                    ellipse(200, 200, randWidth * 2, randWidth * 2);
+                    ellipse(0, 0, randWidth * 2, randWidth * 2);
                     break;
                 case 1:
-                    hexagon(200, 200, randWidth, 60);
+                    hexagon(0, 0, randWidth, 60);
                     break;
             }
 
@@ -98,31 +261,36 @@ const genOptions = [
     elements.dots,
 ];
 const genIndex = [
-    0, 
-    0, 
-    0, 
-    0, 
-    0, 
+    0,
+    0,
+    0,
+    0,
+    0,
 ];
 const numGenned = 0;
 const toGen = [];
 
-function star() {
-    if(toGen.length < 4+rand(4)){
+function star(x, y, sc, rot) {
+    push();
+    translate(x, y);
+    scale(sc);
+    rotate(rot);
+    if (toGen.length < 4 + rand(4)) {
         var genRand = rand(genOptions.length - 1);
         genIndex[genRand]++;
-        if(genIndex[genRand] <= genOptions[genRand].max){
+        if (genIndex[genRand] <= genOptions[genRand].max) {
             print(genOptions[genRand].id);
             toGen.push(genOptions[genRand]);
         }
-    }else{
-        for(var i = 0; i < toGen.length; i++){
+    } else {
+        for (var i = 0; i < toGen.length; i++) {
             toGen[i].draw();
         }
         print("done");
         noLoop();
     }
-};
+    pop();
+}
 
 function hexagon(x, y, radius, rot) {
     push();
@@ -179,18 +347,18 @@ function dots(x, y, amount, amount2, rot, weight, decay) {
     for (let i = 0; i < amount; i++) {
         rotate(rotAngle);
         for (let j = 0; j < amount2; j++) {
-            switch(decayRand){
+            switch (decayRand) {
                 case 0:
                     strokeWeight(weight);
-                break;
+                    break;
                 case 1:
-                strokeWeight(weight/4 + (decay*j));
-                break;
+                    strokeWeight(weight / 4 + (decay * j));
+                    break;
                 case 2:
-                    strokeWeight(weight - (decay*j));
-                break;
+                    strokeWeight(weight - (decay * j));
+                    break;
             }
-            
+
             point(radius + (j * radSpace), 0);
         }
     }
