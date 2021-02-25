@@ -65,7 +65,7 @@ function back(type) {
             }
             break;
         case 1:
-            switch (9) {
+            switch (rand(9)) {
                 case 0:
                     for (var x = 0; x < width; x += 10) {
                         for (var y = 0; y < height; y += 10) {
