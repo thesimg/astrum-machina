@@ -13,7 +13,6 @@ function pointOnCircle(x, y, radius, angle) {
 }
 
 function back(type) {
-
     switch (type) {
         case 0:
             switch (rand(3)) {
@@ -168,13 +167,39 @@ function back(type) {
                     break;
             }
             break;
+        case 2:
+            var x = 0;
+            var y = 0;
+            var gap = 75 + rand(75);
+            push();
+            
+            switch (rand(1)) {
+                case 0:
+                    translate(width, 0);
+                    rotate(90);
+                    break;
+            }
+            translate(-50, 0);
+            for (var i = 0; i < gap * 20; i++) {
+                stroke(50+rand(100));
+                strokeWeight(10);
+                if (random(2) < 0.5) { // The if statement changes the direction of the lines.
+                    line(x, y, x + gap, y + gap);
+                } else {
+                    line(x, y + gap, x + gap, y);
+                }
+
+                x = x + (gap / 3); //This allows the lines to go across the canvas.
+                if (x > width+100) {
+                    x = 0;
+                    y = y + gap;
+                }
+            }
+            pop();
+            break;
 
     }
 }
-
-
-
-
 
 const elements = {
     lines: {
@@ -286,8 +311,6 @@ function star(x, y, sc, rot) {
         for (var i = 0; i < toGen.length; i++) {
             toGen[i].draw();
         }
-        print("done");
-        noLoop();
     }
     pop();
 }
