@@ -1,5 +1,5 @@
-function rand(max) {
-    return round(random() * max);
+function rand(max, min) {
+    return round(random(max, min));
 }
 
 function shade() {
@@ -201,6 +201,22 @@ function back(type) {
     }
 }
 
+function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return typeof sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+    return false;
+};
+
 const elements = {
     lines: {
         id: "lines",
@@ -304,7 +320,6 @@ function star(x, y, sc, rot) {
         var genRand = rand(genOptions.length - 1);
         genIndex[genRand]++;
         if (genIndex[genRand] <= genOptions[genRand].max) {
-            print(genOptions[genRand].id);
             toGen.push(genOptions[genRand]);
         }
     } else {
