@@ -27,6 +27,7 @@ function draw() {
   star(random(0, 400), random(0, 400), random(0.5, 2), rand(360));
 
   if(frameCount > 10){
+    save("AM" + seed + ".png")
     noLoop();
   }
 }
