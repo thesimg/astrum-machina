@@ -1,6 +1,7 @@
 var seed;
 function setup() {
-  createCanvas(1000, 1000);
+  const myCanvas = createCanvas(1000, 1000);
+  myCanvas.parent('canvasDiv');
   background(40);
   angleMode(DEGREES);
   rectMode(CENTER);
@@ -20,16 +21,22 @@ function draw() {
   rect(width / 2, height / 2, width + 20, height + 20)
   
   fill(15);
-  textFont("Monospace", 40);
+  textFont("Source Code Pro", 40);
   textAlign(CENTER);
   text(seed, random(100, 900), random(100, 900));
-
 
   star(random(0, 400), random(0, 400), random(0.5, 2), rand(360));
   star(random(500, 900), random(500, 900), random(0.5, 2), rand(360));
 
   if(frameCount > 10){
-    save("AM" + seed + ".png")
     noLoop();
+  }
+}
+
+function mousePressed(){
+  if(mouseX > 0 && mouseX < width){
+    if(mouseY > 0 && mouseY < height){
+      save("AM" + seed + ".png");
+    }
   }
 }

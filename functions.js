@@ -19,8 +19,8 @@ function back(type) {
                 case 0:
                     push();
                     translate(random(10), random(10));
-                    for (var i = 0; i < 52; i++) {
-                        for (var j = 0; j < 50; j++) {
+                    for (var i = 0; i < 55; i++) {
+                        for (var j = 0; j < 55; j++) {
                             fill(200);
                             rect(i * 20, j * 20, random(20), 10);
                         }
@@ -30,8 +30,8 @@ function back(type) {
                 case 1:
                     push();
                     translate(random(10), random(10));
-                    for (var i = 0; i < 52; i++) {
-                        for (var j = 0; j < 50; j++) {
+                    for (var i = 0; i < 55; i++) {
+                        for (var j = 0; j < 55; j++) {
                             fill(200);
                             rect(i * 20, j * 20, 10, random(20));
                         }
@@ -41,8 +41,8 @@ function back(type) {
                 case 2:
                     push();
                     translate(random(10), random(10));
-                    for (var i = 0; i < 52; i++) {
-                        for (var j = 0; j < 50; j++) {
+                    for (var i = 0; i < 55; i++) {
+                        for (var j = 0; j < 55; j++) {
                             fill(200);
                             rect(random(10) + i * 20, random(10) + j * 20, random(20), 10);
                         }
@@ -52,8 +52,8 @@ function back(type) {
                 case 3:
                     push();
                     translate(random(10), random(10));
-                    for (var i = 0; i < 52; i++) {
-                        for (var j = 0; j < 50; j++) {
+                    for (var i = 0; i < 55; i++) {
+                        for (var j = 0; j < 55; j++) {
                             fill(200);
                             rect(random(10) + i * 20, random(10) + j * 20, 10, random(20));
                         }
@@ -66,8 +66,8 @@ function back(type) {
         case 1:
             switch (rand(9)) {
                 case 0:
-                    for (var x = 0; x < width; x += 10) {
-                        for (var y = 0; y < height; y += 10) {
+                    for (var x = 0; x < width+30; x += 10) {
+                        for (var y = 0; y < height+30; y += 10) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
                             fill(c, 100 + random(155));
                             rect(x, y, 10, 10);
@@ -76,8 +76,8 @@ function back(type) {
                     }
                     break;
                 case 1:
-                    for (var x = 0; x < width; x += 20) {
-                        for (var y = 0; y < height; y += 20) {
+                    for (var x = 0; x < width+40; x += 20) {
+                        for (var y = 0; y < height+40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
                             fill(c, 100 + random(155));
                             rect(x, y, 10, 10);
@@ -86,8 +86,8 @@ function back(type) {
                     }
                     break;
                 case 2:
-                    for (var x = 0; x < width; x += 20) {
-                        for (var y = 0; y < height; y += 20) {
+                    for (var x = 0; x < width+40; x += 20) {
+                        for (var y = 0; y < height+40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
                             fill(c, 100 + random(155));
                             ellipse(x, y, 20, 20);
@@ -96,8 +96,8 @@ function back(type) {
                     }
                     break;
                 case 3:
-                    for (var x = 0; x < width; x += 20) {
-                        for (var y = 0; y < height; y += 20) {
+                    for (var x = 0; x < width+40; x += 20) {
+                        for (var y = 0; y < height+40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
                             fill(c, 100 + random(155));
                             ellipse(x + random(10), y + random(10), 20, 20);
@@ -106,8 +106,8 @@ function back(type) {
                     }
                     break;
                 case 4:
-                    for (var x = 0; x < width; x += 10) {
-                        for (var y = 0; y < height; y += 10) {
+                    for (var x = 0; x < width+40; x += 10) {
+                        for (var y = 0; y < height+40; y += 10) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
                             fill(c, 100 + random(155));
                             ellipse(x, y, random(10), random(10));
@@ -116,8 +116,8 @@ function back(type) {
                     }
                     break;
                 case 5:
-                    for (var x = 0; x < width; x += 10) {
-                        for (var y = 0; y < height; y += 10) {
+                    for (var x = 0; x < width+40; x += 10) {
+                        for (var y = 0; y < height+40; y += 10) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
                             fill(c, 100 + random(155));
                             rect(x, y, random(10), random(10));
@@ -126,8 +126,8 @@ function back(type) {
                     }
                     break;
                 case 6:
-                    for (var x = 0; x < width; x += 20) {
-                        for (var y = 0; y < height; y += 20) {
+                    for (var x = 0; x < width+40; x += 20) {
+                        for (var y = 0; y < height+40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
                             fill(c, 100 + random(155));
                             ellipse(x, y, random(20), random(20));
@@ -136,8 +136,8 @@ function back(type) {
                     }
                     break;
                 case 7:
-                    for (var x = 0; x < width; x += 20) {
-                        for (var y = 0; y < height; y += 20) {
+                    for (var x = 0; x < width+40; x += 20) {
+                        for (var y = 0; y < height+40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
                             fill(c, 100 + random(155));
                             rect(x, y, random(20), random(20));
@@ -146,8 +146,8 @@ function back(type) {
                     }
                     break;
                 case 8:
-                    for (var x = 0; x < width; x += 20) {
-                        for (var y = 0; y < height; y += 20) {
+                    for (var x = 0; x < width+40; x += 20) {
+                        for (var y = 0; y < height+40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
                             fill(c, 100 + random(155));
                             ellipse(x + random(10), y + random(10), random(20), random(20));
@@ -156,8 +156,8 @@ function back(type) {
                     }
                     break;
                 case 9:
-                    for (var x = 0; x < width; x += 20) {
-                        for (var y = 0; y < height; y += 20) {
+                    for (var x = 0; x < width+40; x += 20) {
+                        for (var y = 0; y < height+40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
                             fill(c, 100 + random(155));
                             rect(x + random(10), y + random(10), random(20), random(20));
@@ -217,7 +217,7 @@ function getUrlParameter(sParam) {
     return false;
 };
 
-const elements = {
+const starElements = {
     lines: {
         id: "lines",
         max: 2,
@@ -238,7 +238,7 @@ const elements = {
         max: 2,
         fillWeight: 20,
         draw() {
-            if (rand(100) < elements.circles.fillWeight) {
+            if (rand(100) < starElements.circles.fillWeight) {
                 fill(shade(), 25 + rand(100));
                 noStroke();
             } else {
@@ -255,7 +255,7 @@ const elements = {
         max: 2,
         fillWeight: 20,
         draw() {
-            if (rand(100) < elements.hexagons.fillWeight) {
+            if (rand(100) < starElements.hexagons.fillWeight) {
                 fill(shade(), 25 + rand(100));
                 noStroke();
             } else {
@@ -273,15 +273,15 @@ const elements = {
         fillWeight: 20,
         width: 140,
         draw() {
-            if (rand(100) < elements.outline.fillWeight) {
+            if (rand(100) < starElements.outline.fillWeight) {
                 fill(shade(), 25 + rand(100));
             } else {
                 noFill();
                 stroke(shade());
                 strokeWeight(0.5 + random(1));
             }
-            let randWidth = 50 + rand(elements.outline.width);
-            switch (rand(elements.outline.shape)) {
+            let randWidth = 50 + rand(starElements.outline.width);
+            switch (rand(starElements.outline.shape)) {
                 case 0:
                     ellipse(0, 0, randWidth * 2, randWidth * 2);
                     break;
@@ -295,11 +295,11 @@ const elements = {
 }
 
 const genOptions = [
-    elements.outline,
-    elements.lines,
-    elements.circles,
-    elements.hexagons,
-    elements.dots,
+    starElements.outline,
+    starElements.lines,
+    starElements.circles,
+    starElements.hexagons,
+    starElements.dots,
 ];
 const genIndex = [
     0,
@@ -310,44 +310,6 @@ const genIndex = [
 ];
 const numGenned = 0;
 const toGen = [];
-
-function star(x, y, sc, rot) {
-    push();
-    translate(x, y);
-    scale(sc);
-    rotate(rot);
-    if (toGen.length < 4 + rand(4)) {
-        var genRand = rand(genOptions.length - 1);
-        genIndex[genRand]++;
-        if (genIndex[genRand] <= genOptions[genRand].max) {
-            toGen.push(genOptions[genRand]);
-        }
-    } else {
-        for (var i = 0; i < toGen.length; i++) {
-            toGen[i].draw();
-        }
-    }
-    pop();
-}
-
-function hexagon(x, y, radius, rot) {
-    push();
-    translate(x, y);
-    rotate(rot);
-    const rotAngle = 360 / 6;
-    beginShape()
-    for (let i = 0; i < 6; i++) {
-        const thisVertex = pointOnCircle(0, 0, radius, i * rotAngle)
-        vertex(thisVertex.x, thisVertex.y)
-    }
-    endShape(CLOSE)
-    pop();
-}
-
-function circagon(x, y, radius) {
-    ellipse(x, y, radius * 2, radius * 2);
-}
-
 
 function lines(x, y, amount, rot, weight) {
     const rotAngle = 360 / amount;
@@ -438,6 +400,25 @@ function hexagons(x, y, amount, rot) {
             hexagon(radius + radCap, 0, 20, 0);
         } else {
             hexagon(radius + radCap, 0, 20, 30);
+        }
+    }
+    pop();
+}
+
+function star(x, y, sc, rot) {
+    push();
+    translate(x, y);
+    scale(sc);
+    rotate(rot);
+    if (toGen.length < 4 + rand(4)) {
+        var genRand = rand(genOptions.length - 1);
+        genIndex[genRand]++;
+        if (genIndex[genRand] <= genOptions[genRand].max) {
+            toGen.push(genOptions[genRand]);
+        }
+    } else {
+        for (var i = 0; i < toGen.length; i++) {
+            toGen[i].draw();
         }
     }
     pop();

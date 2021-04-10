@@ -1,19 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sketch</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Sketch</title>
 
-    <script src="libraries/p5.min.js"></script>
-    <!--<script src="libraries/p5.sound.min.js"></script>-->
-  </head>
+  <link rel="stylesheet" type="text/css" href="style.css">
 
-  <body>
-    <script src="sketch.js"></script>
+  <script src="libraries/p5.min.js"></script>
+</head>
+
+<body>
+  <div class="title"><strong>Astrum Machina</strong></div>
+  <div class="subtitle">A Apparatus Ad Astra</div>
+  <br>
+  <p>
+    Astrum Machina is a generative art project, built with <a href="https://p5js.org">p5.js</a> and automated using <a
+      href="https://www.python.org/">Python</a> and <a href="https://www.selenium.dev/">Selenium</a>. I created Astrum
+    out of the urge to create something that keeps on creating.
+    <br><br>
+    The bot posts every 4 hours on <a href="https://twitter.com/astrummachina">Twitter</a>, and I manually post the best
+    pieces on <a href="https://www.instagram.com/astrummachina/">Instagram</a>. I have, to this point, been unable to
+    get an
+    Instagram bot working without being shadowbanned immediately, because Instagram does not provide a public bot API.
+  </p>
+
+  <div id="canvasDiv">
+    <script src="sketch.js" id="astrum"></script>
     <script src="functions.js"></script>
-  </body>
+    <script src="shapes.js"></script>
+  </div>
+
+  <script type="text/javascript">
+    function setSeedUrl(n) {
+      var seedInput = encodeURIComponent(document.getElementById("seed").value);
+      var newwindow = window.open("http://thesimg.github.io/astrum-machina/?seed=" + seedInput, 'name');
+      return false;
+    }
+  </script>
+
+  <form target="_blank">
+    Input Seed: <input id="seed" type="text" value="" />
+    <button onclick="setSeedUrl()">Go</button>
+  </form>
+
+  <footer>
+    <p>Made by <a href="https://thesimg.github.io/">thesimg</a></p>
+  </footer>
+</body>
+
 </html>
