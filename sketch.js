@@ -26,7 +26,7 @@ function draw() {
   fill(0, 200);
   rect(width / 2, height / 2, width + 20, height + 20);
 
-  fill(15);
+  fill(40);
   textFont("Source Code Pro", 40);
   textAlign(CENTER);
   text(seed, random(100, 900), random(100, 900));
