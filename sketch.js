@@ -7,7 +7,8 @@ function setup() {
   noStroke();
 
   seed = getUrlParameter('seed') || rand(9999999999);
-  randomSeed("seed: " + seed);
+  randomSeed(seed);
+  print("seed: " + seed);
   print("url: " + getUrlParameter('seed'));
   print(seed);
 }
@@ -25,6 +26,7 @@ function draw() {
 
 
   star(random(0, 400), random(0, 400), random(0.5, 2), rand(360));
+  star(random(500, 900), random(500, 900), random(0.5, 2), rand(360));
 
   if(frameCount > 10){
     save("AM" + seed + ".png")
