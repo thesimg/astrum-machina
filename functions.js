@@ -1,3 +1,6 @@
+var numGenned = 0;
+var toGen = [];
+
 function rand(max, min) {
     return round(random(max, min));
 }
@@ -66,8 +69,8 @@ function back(type) {
         case 1:
             switch (rand(9)) {
                 case 0:
-                    for (var x = 0; x < width+30; x += 10) {
-                        for (var y = 0; y < height+30; y += 10) {
+                    for (var x = 0; x < width + 30; x += 10) {
+                        for (var y = 0; y < height + 30; y += 10) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
                             fill(c, 100 + random(155));
                             rect(x, y, 10, 10);
@@ -76,8 +79,8 @@ function back(type) {
                     }
                     break;
                 case 1:
-                    for (var x = 0; x < width+40; x += 20) {
-                        for (var y = 0; y < height+40; y += 20) {
+                    for (var x = 0; x < width + 40; x += 20) {
+                        for (var y = 0; y < height + 40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
                             fill(c, 100 + random(155));
                             rect(x, y, 10, 10);
@@ -86,8 +89,8 @@ function back(type) {
                     }
                     break;
                 case 2:
-                    for (var x = 0; x < width+40; x += 20) {
-                        for (var y = 0; y < height+40; y += 20) {
+                    for (var x = 0; x < width + 40; x += 20) {
+                        for (var y = 0; y < height + 40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
                             fill(c, 100 + random(155));
                             ellipse(x, y, 20, 20);
@@ -96,8 +99,8 @@ function back(type) {
                     }
                     break;
                 case 3:
-                    for (var x = 0; x < width+40; x += 20) {
-                        for (var y = 0; y < height+40; y += 20) {
+                    for (var x = 0; x < width + 40; x += 20) {
+                        for (var y = 0; y < height + 40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
                             fill(c, 100 + random(155));
                             ellipse(x + random(10), y + random(10), 20, 20);
@@ -106,8 +109,8 @@ function back(type) {
                     }
                     break;
                 case 4:
-                    for (var x = 0; x < width+40; x += 10) {
-                        for (var y = 0; y < height+40; y += 10) {
+                    for (var x = 0; x < width + 40; x += 10) {
+                        for (var y = 0; y < height + 40; y += 10) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
                             fill(c, 100 + random(155));
                             ellipse(x, y, random(10), random(10));
@@ -116,8 +119,8 @@ function back(type) {
                     }
                     break;
                 case 5:
-                    for (var x = 0; x < width+40; x += 10) {
-                        for (var y = 0; y < height+40; y += 10) {
+                    for (var x = 0; x < width + 40; x += 10) {
+                        for (var y = 0; y < height + 40; y += 10) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
                             fill(c, 100 + random(155));
                             rect(x, y, random(10), random(10));
@@ -126,8 +129,8 @@ function back(type) {
                     }
                     break;
                 case 6:
-                    for (var x = 0; x < width+40; x += 20) {
-                        for (var y = 0; y < height+40; y += 20) {
+                    for (var x = 0; x < width + 40; x += 20) {
+                        for (var y = 0; y < height + 40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
                             fill(c, 100 + random(155));
                             ellipse(x, y, random(20), random(20));
@@ -136,8 +139,8 @@ function back(type) {
                     }
                     break;
                 case 7:
-                    for (var x = 0; x < width+40; x += 20) {
-                        for (var y = 0; y < height+40; y += 20) {
+                    for (var x = 0; x < width + 40; x += 20) {
+                        for (var y = 0; y < height + 40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
                             fill(c, 100 + random(155));
                             rect(x, y, random(20), random(20));
@@ -146,8 +149,8 @@ function back(type) {
                     }
                     break;
                 case 8:
-                    for (var x = 0; x < width+40; x += 20) {
-                        for (var y = 0; y < height+40; y += 20) {
+                    for (var x = 0; x < width + 40; x += 20) {
+                        for (var y = 0; y < height + 40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
                             fill(c, 100 + random(155));
                             ellipse(x + random(10), y + random(10), random(20), random(20));
@@ -156,8 +159,8 @@ function back(type) {
                     }
                     break;
                 case 9:
-                    for (var x = 0; x < width+40; x += 20) {
-                        for (var y = 0; y < height+40; y += 20) {
+                    for (var x = 0; x < width + 40; x += 20) {
+                        for (var y = 0; y < height + 40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
                             fill(c, 100 + random(155));
                             rect(x + random(10), y + random(10), random(20), random(20));
@@ -172,7 +175,7 @@ function back(type) {
             var y = 0;
             var gap = 75 + rand(75);
             push();
-            
+
             switch (rand(1)) {
                 case 0:
                     translate(width, 0);
@@ -181,7 +184,7 @@ function back(type) {
             }
             translate(-50, 0);
             for (var i = 0; i < gap * 20; i++) {
-                stroke(50+rand(100));
+                stroke(50 + rand(100));
                 strokeWeight(10);
                 if (random(2) < 0.5) { // The if statement changes the direction of the lines.
                     line(x, y, x + gap, y + gap);
@@ -190,7 +193,7 @@ function back(type) {
                 }
 
                 x = x + (gap / 3); //This allows the lines to go across the canvas.
-                if (x > width+100) {
+                if (x > width + 100) {
                     x = 0;
                     y = y + gap;
                 }
@@ -308,8 +311,6 @@ const genIndex = [
     0,
     0,
 ];
-const numGenned = 0;
-const toGen = [];
 
 function lines(x, y, amount, rot, weight) {
     const rotAngle = 360 / amount;
@@ -410,6 +411,8 @@ function star(x, y, sc, rot) {
     translate(x, y);
     scale(sc);
     rotate(rot);
+    //fill(255, 0, 0);
+    //ellipse(0, 0, 100, 100)
     if (toGen.length < 4 + rand(4)) {
         var genRand = rand(genOptions.length - 1);
         genIndex[genRand]++;
@@ -422,4 +425,22 @@ function star(x, y, sc, rot) {
         }
     }
     pop();
+
+}
+
+function element(x, y, rad) {
+    strokeWeight(5);
+    stroke(shade());
+    fill(255, rand(25));
+    switch (rand(4)) {
+        case 0:
+            circagon(x, y, rad);
+            break;
+        case 1:
+            hexagon(x, y, rad, rand(360));
+            break;
+        case 2:
+            blob(x, y, rad);    
+            break;
+    }
 }
