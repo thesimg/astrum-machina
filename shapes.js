@@ -1,7 +1,7 @@
 function hexagon(x, y, radius, rot) {
   push();
   translate(x, y);
-  //rotate(rot);
+  rotate(rot);
   const rotAngle = 360 / 6;
   beginShape()
   for (let i = 0; i < 6; i++) {
