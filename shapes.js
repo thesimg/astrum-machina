@@ -1,38 +1,38 @@
 function hexagon(x, y, radius, rot) {
-  push();
-  translate(x, y);
-  rotate(rot);
+  buffer.push();
+  buffer.translate(x, y);
+  buffer.rotate(rot);
   const rotAngle = 360 / 6;
-  beginShape()
+  buffer.beginShape()
   for (let i = 0; i < 6; i++) {
     const thisVertex = pointOnCircle(0, 0, radius, i * rotAngle)
-    vertex(thisVertex.x, thisVertex.y)
+    buffer.vertex(thisVertex.x, thisVertex.y)
   }
-  endShape(CLOSE)
-  pop();
+  buffer.endShape(CLOSE)
+  buffer.pop();
 }
 
 function circagon(x, y, radius) {
-  ellipse(x, y, radius * 2, radius * 2);
+  buffer.ellipse(x, y, radius * 2, radius * 2);
 }
 
 function blob(x, y, r) {
   var n = 200;
   var z = 0;
-  angleMode(RADIANS);
-  push();
-  translate(x, y);
-  beginShape();
+  buffer.angleMode(RADIANS);
+  buffer.push();
+  buffer.translate(x, y);
+  buffer.beginShape();
   for (var k = 0; k < n; k++) {
     var perl = 1.4 / 1 *  (noise(3 + 0.7 * cos(TWO_PI / n * k), 3 + 0.7 * sin(TWO_PI / n * k), z) - 0.5);
     var d = r * (1 + perl);
-    vertex(d * cos(TWO_PI / n * k), d * sin(TWO_PI / n * k));
+    buffer.vertex(d * cos(TWO_PI / n * k), d * sin(TWO_PI / n * k));
   }
 
-  endShape(CLOSE);
+  buffer.endShape(CLOSE);
   z = z + 0.008;
 
-  angleMode(DEGREES);
-  noStroke();
-  pop();
+  buffer.angleMode(DEGREES);
+  buffer.noStroke();
+  buffer.pop();
 }

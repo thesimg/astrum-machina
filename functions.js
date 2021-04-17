@@ -20,48 +20,48 @@ function back(type) {
         case 0:
             switch (rand(3)) {
                 case 0:
-                    push();
-                    translate(random(10), random(10));
+                    buffer.push();
+                    buffer.translate(random(10), random(10));
                     for (var i = 0; i < 55; i++) {
                         for (var j = 0; j < 55; j++) {
-                            fill(200);
-                            rect(i * 20, j * 20, random(20), 10);
+                            buffer.fill(200);
+                            buffer.rect(i * 20, j * 20, random(20), 10);
                         }
                     }
-                    pop();
+                    buffer.pop();
                     break;
                 case 1:
-                    push();
-                    translate(random(10), random(10));
+                    buffer.push();
+                    buffer.translate(random(10), random(10));
                     for (var i = 0; i < 55; i++) {
                         for (var j = 0; j < 55; j++) {
-                            fill(200);
-                            rect(i * 20, j * 20, 10, random(20));
+                            buffer.fill(200);
+                            buffer.rect(i * 20, j * 20, 10, random(20));
                         }
                     }
-                    pop();
+                    buffer.pop();
                     break;
                 case 2:
-                    push();
-                    translate(random(10), random(10));
+                    buffer.push();
+                    buffer.translate(random(10), random(10));
                     for (var i = 0; i < 55; i++) {
                         for (var j = 0; j < 55; j++) {
-                            fill(200);
-                            rect(random(10) + i * 20, random(10) + j * 20, random(20), 10);
+                            buffer.fill(200);
+                            buffer.rect(random(10) + i * 20, random(10) + j * 20, random(20), 10);
                         }
                     }
-                    pop();
+                    buffer.pop();
                     break;
                 case 3:
-                    push();
-                    translate(random(10), random(10));
+                    buffer.push();
+                    buffer.translate(random(10), random(10));
                     for (var i = 0; i < 55; i++) {
                         for (var j = 0; j < 55; j++) {
-                            fill(200);
-                            rect(random(10) + i * 20, random(10) + j * 20, 10, random(20));
+                            buffer.fill(200);
+                            buffer.rect(random(10) + i * 20, random(10) + j * 20, 10, random(20));
                         }
                     }
-                    pop();
+                    buffer.pop();
                     break;
                     break;
             }
@@ -72,8 +72,8 @@ function back(type) {
                     for (var x = 0; x < width + 30; x += 10) {
                         for (var y = 0; y < height + 30; y += 10) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
-                            fill(c, 100 + random(155));
-                            rect(x, y, 10, 10);
+                            buffer.fill(c, 100 + random(155));
+                            buffer.rect(x, y, 10, 10);
 
                         }
                     }
@@ -82,8 +82,8 @@ function back(type) {
                     for (var x = 0; x < width + 40; x += 20) {
                         for (var y = 0; y < height + 40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
-                            fill(c, 100 + random(155));
-                            rect(x, y, 10, 10);
+                            buffer.fill(c, 100 + random(155));
+                            buffer.rect(x, y, 10, 10);
 
                         }
                     }
@@ -92,8 +92,8 @@ function back(type) {
                     for (var x = 0; x < width + 40; x += 20) {
                         for (var y = 0; y < height + 40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
-                            fill(c, 100 + random(155));
-                            ellipse(x, y, 20, 20);
+                            buffer.fill(c, 100 + random(155));
+                            buffer.ellipse(x, y, 20, 20);
 
                         }
                     }
@@ -102,8 +102,8 @@ function back(type) {
                     for (var x = 0; x < width + 40; x += 20) {
                         for (var y = 0; y < height + 40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
-                            fill(c, 100 + random(155));
-                            ellipse(x + random(10), y + random(10), 20, 20);
+                            buffer.fill(c, 100 + random(155));
+                            buffer.ellipse(x + random(10), y + random(10), 20, 20);
 
                         }
                     }
@@ -112,8 +112,8 @@ function back(type) {
                     for (var x = 0; x < width + 40; x += 10) {
                         for (var y = 0; y < height + 40; y += 10) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
-                            fill(c, 100 + random(155));
-                            ellipse(x, y, random(10), random(10));
+                            buffer.fill(c, 100 + random(155));
+                            buffer.ellipse(x, y, random(10), random(10));
 
                         }
                     }
@@ -122,8 +122,8 @@ function back(type) {
                     for (var x = 0; x < width + 40; x += 10) {
                         for (var y = 0; y < height + 40; y += 10) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
-                            fill(c, 100 + random(155));
-                            rect(x, y, random(10), random(10));
+                            buffer.fill(c, 100 + random(155));
+                            buffer.rect(x, y, random(10), random(10));
 
                         }
                     }
@@ -132,8 +132,8 @@ function back(type) {
                     for (var x = 0; x < width + 40; x += 20) {
                         for (var y = 0; y < height + 40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
-                            fill(c, 100 + random(155));
-                            ellipse(x, y, random(20), random(20));
+                            buffer.fill(c, 100 + random(155));
+                            buffer.ellipse(x, y, random(20), random(20));
 
                         }
                     }
@@ -142,8 +142,8 @@ function back(type) {
                     for (var x = 0; x < width + 40; x += 20) {
                         for (var y = 0; y < height + 40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
-                            fill(c, 100 + random(155));
-                            rect(x, y, random(20), random(20));
+                            buffer.fill(c, 100 + random(155));
+                            buffer.rect(x, y, random(20), random(20));
 
                         }
                     }
@@ -152,8 +152,8 @@ function back(type) {
                     for (var x = 0; x < width + 40; x += 20) {
                         for (var y = 0; y < height + 40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
-                            fill(c, 100 + random(155));
-                            ellipse(x + random(10), y + random(10), random(20), random(20));
+                            buffer.fill(c, 100 + random(155));
+                            buffer.ellipse(x + random(10), y + random(10), random(20), random(20));
 
                         }
                     }
@@ -162,8 +162,8 @@ function back(type) {
                     for (var x = 0; x < width + 40; x += 20) {
                         for (var y = 0; y < height + 40; y += 20) {
                             var c = 255 * noise(0.01 * x, 0.01 * y);
-                            fill(c, 100 + random(155));
-                            rect(x + random(10), y + random(10), random(20), random(20));
+                            buffer.fill(c, 100 + random(155));
+                            buffer.rect(x + random(10), y + random(10), random(20), random(20));
 
                         }
                     }
@@ -174,22 +174,22 @@ function back(type) {
             var x = 0;
             var y = 0;
             var gap = 75 + rand(75);
-            push();
+            buffer.push();
 
             switch (rand(1)) {
                 case 0:
-                    translate(width, 0);
-                    rotate(90);
+                    buffer.translate(width, 0);
+                    buffer.rotate(90);
                     break;
             }
-            translate(-50, 0);
+            buffer.translate(-50, 0);
             for (var i = 0; i < gap * 20; i++) {
-                stroke(50 + rand(100));
-                strokeWeight(10);
-                if (random(2) < 0.5) { // The if statement changes the direction of the lines.
-                    line(x, y, x + gap, y + gap);
+                buffer.stroke(50 + rand(100));
+                buffer.strokeWeight(10);
+                if (random(2) < 0.5) { // The if statement changes the dibuffer.rection of the lines.
+                    buffer.line(x, y, x + gap, y + gap);
                 } else {
-                    line(x, y + gap, x + gap, y);
+                    buffer.line(x, y + gap, x + gap, y);
                 }
 
                 x = x + (gap / 3); //This allows the lines to go across the canvas.
@@ -198,7 +198,7 @@ function back(type) {
                     y = y + gap;
                 }
             }
-            pop();
+            buffer.pop();
             break;
 
     }
@@ -242,12 +242,12 @@ const starElements = {
         fillWeight: 20,
         draw() {
             if (rand(100) < starElements.circles.fillWeight) {
-                fill(shade(), 25 + rand(100));
-                noStroke();
+                buffer.fill(shade(), 25 + rand(100));
+                buffer.noStroke();
             } else {
-                stroke(shade());
-                strokeWeight(0.5 + random(1));
-                noFill();
+                buffer.stroke(shade());
+                buffer.strokeWeight(0.5 + random(1));
+                buffer.noFill();
             }
             circles(0, 0, 4 + rand(6) * 2, 0);
 
@@ -259,12 +259,12 @@ const starElements = {
         fillWeight: 20,
         draw() {
             if (rand(100) < starElements.hexagons.fillWeight) {
-                fill(shade(), 25 + rand(100));
-                noStroke();
+                buffer.fill(shade(), 25 + rand(100));
+                buffer.noStroke();
             } else {
-                stroke(shade());
-                strokeWeight(0.5 + random(1));
-                noFill();
+                buffer.stroke(shade());
+                buffer.strokeWeight(0.5 + random(1));
+                buffer.noFill();
             }
             hexagons(0, 0, 4 + rand(6) * 2, 0);
         }
@@ -277,16 +277,16 @@ const starElements = {
         width: 140,
         draw() {
             if (rand(100) < starElements.outline.fillWeight) {
-                fill(shade(), 25 + rand(100));
+                buffer.fill(shade(), 25 + rand(100));
             } else {
-                noFill();
-                stroke(shade());
-                strokeWeight(0.5 + random(1));
+                buffer.noFill();
+                buffer.stroke(shade());
+                buffer.strokeWeight(0.5 + random(1));
             }
             let randWidth = 50 + rand(starElements.outline.width);
             switch (rand(starElements.outline.shape)) {
                 case 0:
-                    ellipse(0, 0, randWidth * 2, randWidth * 2);
+                    buffer.ellipse(0, 0, randWidth * 2, randWidth * 2);
                     break;
                 case 1:
                     hexagon(0, 0, randWidth, 60);
@@ -318,19 +318,19 @@ function lines(x, y, amount, rot, weight) {
     const radius = 15 + rand(75);
     let radRand;
 
-    push();
-    translate(x, y);
-    rotate(rot);
+    buffer.push();
+    buffer.translate(x, y);
+    buffer.rotate(rot);
 
-    strokeWeight(weight);
-    stroke(shade());
-    strokeCap(SQUARE);
+    buffer.strokeWeight(weight);
+    buffer.stroke(shade());
+    buffer.strokeCap(SQUARE);
 
     for (let i = 0; i < amount; i++) {
-        rotate(rotAngle);
-        line(radius, 0, radius + radCap, 0);
+        buffer.rotate(rotAngle);
+        buffer.line(radius, 0, radius + radCap, 0);
     }
-    pop();
+    buffer.pop();
 }
 
 function dots(x, y, amount, amount2, rot, weight, decay) {
@@ -339,80 +339,80 @@ function dots(x, y, amount, amount2, rot, weight, decay) {
     const radius = 15 + rand(75);
     const decayRand = rand(2);
 
-    push();
-    translate(x, y);
-    rotate(rot);
+    buffer.push();
+    buffer.translate(x, y);
+    buffer.rotate(rot);
 
-    stroke(shade());
+    buffer.stroke(shade());
 
     for (let i = 0; i < amount; i++) {
-        rotate(rotAngle);
+        buffer.rotate(rotAngle);
         for (let j = 0; j < amount2; j++) {
             switch (decayRand) {
                 case 0:
-                    strokeWeight(weight);
+                    buffer.strokeWeight(weight);
                     break;
                 case 1:
-                    strokeWeight(weight / 4 + (decay * j));
+                    buffer.strokeWeight(weight / 4 + (decay * j));
                     break;
                 case 2:
-                    strokeWeight(weight - (decay * j));
+                    buffer.strokeWeight(weight - (decay * j));
                     break;
             }
 
             point(radius + (j * radSpace), 0);
         }
     }
-    pop();
+    buffer.pop();
 }
 
 function circles(x, y, amount, rot) {
     const lineWeight = 1 + rand(1);
-    strokeWeight(lineWeight);
-    push();
-    translate(x, y);
+    buffer.strokeWeight(lineWeight);
+    buffer.push();
+    buffer.translate(x, y);
     const rotAngle = 360 / amount;
     const radCap = rand(100);
     const radius = 15 + rand(75);
 
-    stroke(shade());
-    rotate(rot);
+    buffer.stroke(shade());
+    buffer.rotate(rot);
     for (let i = 0; i < amount; i++) {
-        rotate(rotAngle);
-        ellipse(radius + radCap, 0, 20, 20);
+        buffer.rotate(rotAngle);
+        buffer.ellipse(radius + radCap, 0, 20, 20);
     }
-    pop();
+    buffer.pop();
 }
 
 function hexagons(x, y, amount, rot) {
     const lineWeight = 1 + rand(1);
-    strokeWeight(lineWeight);
-    push();
-    translate(x, y);
+    buffer.strokeWeight(lineWeight);
+    buffer.push();
+    buffer.translate(x, y);
     const rotAngle = 360 / amount;
     const radCap = rand(100);
     const radius = 15 + rand(75);
 
-    stroke(shade());
-    rotate(rot);
+    buffer.stroke(shade());
+    buffer.rotate(rot);
     for (let i = 0; i < amount; i++) {
-        rotate(rotAngle);
+        buffer.rotate(rotAngle);
         if (rand(1) === 0) {
             hexagon(radius + radCap, 0, 20, 0);
         } else {
             hexagon(radius + radCap, 0, 20, 30);
         }
     }
-    pop();
+    buffer.pop();
 }
 
 function star(x, y, sc, rot) {
-    push();
-    translate(x, y);
-    scale(sc);
-    rotate(rot);
-    //fill(255, 0, 0);
-    //ellipse(0, 0, 100, 100)
+    buffer.push();
+    buffer.translate(x, y);
+    buffer.scale(sc);
+    buffer.rotate(rot);
+    //buffer.fill(255, 0, 0);
+    //buffer.ellipse(0, 0, 100, 100)
     if (toGen.length < 4 + rand(4)) {
         var genRand = rand(genOptions.length - 1);
         genIndex[genRand]++;
@@ -424,14 +424,14 @@ function star(x, y, sc, rot) {
             toGen[i].draw();
         }
     }
-    pop();
+    buffer.pop();
 
 }
 
 function element(x, y, rad) {
-    strokeWeight(5);
-    stroke(shade());
-    fill(255, rand(25));
+    buffer.strokeWeight(5);
+    buffer.stroke(shade());
+    buffer.fill(255, rand(25));
     switch (rand(4)) {
         case 0:
             circagon(x, y, rad);
