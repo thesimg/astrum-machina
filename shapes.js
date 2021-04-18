@@ -19,9 +19,11 @@ function circagon(x, y, radius) {
 function blob(x, y, r) {
   var n = 200;
   var z = 0;
-  buffer.angleMode(RADIANS);
   buffer.push();
   buffer.translate(x, y);
+  buffer.angleMode(DEGREES);
+  buffer.rotate(noise(x, y)*270);
+  angleMode(RADIANS);
   buffer.beginShape();
   for (var k = 0; k < n; k++) {
     var perl = 1.4 / 1 *  (noise(3 + 0.7 * cos(TWO_PI / n * k), 3 + 0.7 * sin(TWO_PI / n * k), z) - 0.5);
@@ -32,6 +34,7 @@ function blob(x, y, r) {
   buffer.endShape(CLOSE);
   z = z + 0.008;
 
+  angleMode(DEGREES);
   buffer.angleMode(DEGREES);
   buffer.noStroke();
   buffer.pop();

@@ -22,7 +22,6 @@ function setup() {
   print(seed);
 }
 
-
 function draw() {
   buffer.noStroke();
   buffer.background(40);
@@ -35,7 +34,6 @@ function draw() {
   buffer.textFont("Source Code Pro", 40);
   buffer.textAlign(CENTER);
   buffer.text(seed, random(100, 900), random(100, 900));
-
 
   if (rand(1) === 0) {
     star(random(1000), random(1000), random(1, 2), random(360));
